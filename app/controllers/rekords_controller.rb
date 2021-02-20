@@ -1,6 +1,7 @@
 class RekordsController < ApplicationController
-  before_action :set_rekord, only: %i[ show edit update destroy ]
 
+  before_action :set_rekord, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
   # GET /rekords or /rekords.json
   def index
     @rekords = Rekord.all
