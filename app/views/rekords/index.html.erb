@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rekords</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rekords.each do |rekord| %>
+      <tr>
+        <td><%= rekord.name %></td>
+        <td><%= rekord.description %></td>
+        <td><%= rekord.user_id %></td>
+        <td><%= link_to 'Show', rekord %></td>
+        <td><%= link_to 'Edit', edit_rekord_path(rekord) %></td>
+        <td><%= link_to 'Destroy', rekord, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rekord', new_rekord_path %>
