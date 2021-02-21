@@ -23,6 +23,7 @@ class RekordsController < ApplicationController
   # POST /rekords or /rekords.json
   def create
     @rekord = Rekord.new(rekord_params)
+    @rekord.user_id = current_user.id
 
     respond_to do |format|
       if @rekord.save
